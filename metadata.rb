@@ -4,8 +4,8 @@ maintainer_email 'you@example.com'
 license          'all_rights'
 description      'Installs/Configures chef-provisioning-node'
 long_description 'Installs/Configures chef-provisioning-node'
-version          '0.1.0'
+version          '0.1.1'
 
-depends 'build-essential'
-depends 'git'
-depends 'chef-dk'
+%w(apt build-essential git chef-dk).each do |cb|
+  depends cb
+end
