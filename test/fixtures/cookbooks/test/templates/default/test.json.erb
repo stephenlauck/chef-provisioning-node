@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "description": "A Delivery Cluster",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "override_attributes": {
+    "delivery-cluster": {
+      "id": "ssh-example",
+      "driver": "ssh",
+      "ssh": {
+        "ssh_username": "vagrant",
+        "key_file": "~/.ssh/insecure_private_key"
+      },
+      "chef-server": {
+         "ip": "33.33.33.10",
+         "organization": "ssh-example"
+      }
+    }
+  }
+}
