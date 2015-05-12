@@ -32,13 +32,17 @@ end
 
 file "/home/vagrant/.ssh/config" do 
   content <<-EOD
+Host 33.33.33.*
+    IdentityFile /home/vagrant/.ssh/insecure_private_key
+    StrictHostKeyChecking no
+
+Host github
     HostName github.com
     User git
-    IdentityFile ~/.ssh/github_key
-    StrictHostKeyChecking no 
+    IdentityFile /home/vagrant/.ssh/github_key
+    StrictHostKeyChecking no
   EOD
   owner 'vagrant'
   group 'vagrant'
   mode '0600'
-  not_if do ::File.exists?('/home/vagrant/.ssh/config') end
 end
