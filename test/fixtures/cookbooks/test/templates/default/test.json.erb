@@ -11,17 +11,18 @@
         "ssh_username": "vagrant",
         "key_file": "/home/vagrant/.ssh/insecure_private_key"
       },
+      "chef-server": {
+         "ip": "33.33.33.10",
+         "organization": "ssh-example",
+         "fqdn": "33.33.33.10"
+      },
       "delivery": {
         "ip": "33.33.33.11",
         "enterprise": "ssh-example",
         "version": "latest",
         "license_file": "/home/vagrant/delivery.license",
-        "fqdn": "33.33.33.11"
-      },
-      "chef-server": {
-         "ip": "33.33.33.10",
-         "organization": "ssh-example",
-         "fqdn": "33.33.33.10"
+        "fqdn": "33.33.33.11",
+        "recipes": [ "cookbooks-vagrant-ohai" ]
       },
       "builders": {
         "count": 3,
@@ -32,7 +33,7 @@
           "artifact": "https://delivery-packages.s3.amazonaws.com/cli/delivery-cli-20150408004719-1.x86_64.rpm",
           "checksum": "fa1f1724482182a9461c21a692b88ecc97e016b8307bd28834c2828eca702e6c"
         },
-        "additional_run_list": [ "cookbooks-vagrant-ohai "]
+        "additional_run_list": [ "cookbooks-vagrant-ohai" ]
       }
     }
   }
