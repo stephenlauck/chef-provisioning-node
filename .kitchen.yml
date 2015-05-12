@@ -12,7 +12,7 @@ platforms:
   - name: centos-6.6
 
 suites:
-  - name: default
+  - name: provision
     driver:
       network:
         - ['private_network', {ip: '33.33.33.9'}]
