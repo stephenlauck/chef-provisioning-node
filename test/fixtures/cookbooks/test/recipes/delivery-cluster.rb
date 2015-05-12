@@ -1,5 +1,6 @@
 git "/home/vagrant/delivery-cluster" do
-  repository "https://github.com/opscode-cookbooks/delivery-cluster.git"
+  repository "https://github.com/stephenlauck/delivery-cluster.git"
+  revision 'ssh_delivery_berks'
   user 'vagrant'
   group 'vagrant'
   action :sync

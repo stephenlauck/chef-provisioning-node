@@ -21,9 +21,10 @@ suites:
       - recipe[chef-provisioning-node::default]
       - recipe[test::setup_ssh_keys]
       - recipe[test::delivery-cluster]
+      - recipe[test::delivery-cli]
     attributes:
 
-  <%  10.upto(17) do |n| %>
+  <%  10.upto(14) do |n| %>
   - name: delivery-<%= n %>
     run_list:
 

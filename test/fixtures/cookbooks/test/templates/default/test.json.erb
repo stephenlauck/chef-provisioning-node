@@ -9,13 +9,14 @@
       "driver": "ssh",
       "ssh": {
         "ssh_username": "vagrant",
-        "key_file": "~/.ssh/insecure_private_key"
+        "key_file": "/home/vagrant/.ssh/insecure_private_key"
       },
       "delivery": {
         "ip": "33.33.33.11",
         "enterprise": "ssh-example",
         "version": "latest",
-        "license_file": "/home/vagrant/delivery.license"
+        "license_file": "/home/vagrant/delivery.license",
+        "fqdn": "33.33.33.11"
       },
       "chef-server": {
          "ip": "33.33.33.10",
@@ -24,13 +25,14 @@
       },
       "builders": {
         "count": 3,
-        "1": { "ip": "1.2.3.4" },
-        "2": { "ip": "2.3.4.5" },
-        "3": { "ip": "3.4.5.6" },
+        "1": { "ip": "33.33.33.12" },
+        "2": { "ip": "33.33.33.13" },
+        "3": { "ip": "33.33.33.14" },
         "delivery-cli": {
           "artifact": "https://delivery-packages.s3.amazonaws.com/cli/delivery-cli-20150408004719-1.x86_64.rpm",
           "checksum": "fa1f1724482182a9461c21a692b88ecc97e016b8307bd28834c2828eca702e6c"
-        }
+        },
+        "additional_run_list": [ "cookbooks-vagrant-ohai "]
       }
     }
   }
