@@ -20,4 +20,3 @@ chef_dk 'my_chef_dk' do
 end
 
 chef_gem 'knife-push'
-
