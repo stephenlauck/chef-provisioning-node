@@ -11,6 +11,7 @@ cookbook_file '/home/vagrant/.ssh/insecure_private_key' do
   group 'vagrant'
   mode '0600'
   source 'insecure_private_key'
+  cookbook 'chef-provisioning-node'
 end
 
 cookbook_file '/home/vagrant/.ssh/authorized_keys' do
@@ -19,4 +20,5 @@ cookbook_file '/home/vagrant/.ssh/authorized_keys' do
   group 'vagrant'
   mode '0600'
   source 'insecure_public_key'
+  cookbook 'chef-provisioning-node'
 end
