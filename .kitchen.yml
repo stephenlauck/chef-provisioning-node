@@ -19,9 +19,8 @@ suites:
     run_list:
       - recipe[emacs]
       - recipe[chef-provisioning-node::default]
-      - recipe[test::setup_ssh_keys]
+      - recipe[chef-provisioning-node::setup_ssh_keys]
       - recipe[test::delivery-cluster]
-      - recipe[test::delivery-cli]
     attributes:
 
   <%  10.upto(14) do |n| %>
