@@ -17,8 +17,10 @@ end
   include_recipe ir
 end
 
-package 'chefdk' do
-  action :upgrade
+chef_dk 'my_chef_dk' do
+    version 'latest'
+    global_shell_init true
+    action :install
 end
 
 chef_gem 'knife-push'
