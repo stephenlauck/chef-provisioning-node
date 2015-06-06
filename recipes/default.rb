@@ -24,3 +24,8 @@ chef_dk 'my_chef_dk' do
 end
 
 chef_gem 'knife-push'
+
+case node['cloud']['provider']
+when 'ec2'
+	include_recipe 'chef-provisioning-node::_aws'
+end rescue NoMethodError
